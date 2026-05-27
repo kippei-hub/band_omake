@@ -1,0 +1,46 @@
+{
+  "nodes": [
+    {
+      "id": "node_start",
+      "kind": "circle",
+      "title": "start.txt",
+      "x": -240,
+      "y": -80,
+      "file": {
+        "id": "file_start",
+        "filename": "start.txt",
+        "content": "This is the first memory fragment.",
+        "assets": []
+      }
+    },
+    {
+      "id": "node_archive",
+      "kind": "square",
+      "title": "archive",
+      "x": 120,
+      "y": 90,
+      "directoryName": "archive",
+      "files": [
+        {
+          "id": "file_archive_note",
+          "filename": "note.txt",
+          "content": "Place public assets under /public/assets and reference them with /assets/...",
+          "assets": []
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "route_01",
+      "name": "route_01",
+      "edges": [
+        {
+          "id": "edge_start_archive",
+          "source": "node_start",
+          "target": "node_archive"
+        }
+      ]
+    }
+  ]
+}
