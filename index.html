@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Webサイト開発者用編集環境</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="control-panel" aria-label="編集パネル">
+        <div class="panel-head">
+          <p class="kicker">Stage 1</p>
+          <h1>開発者用編集環境</h1>
+          <p>VS Codeでコードを編集しながら、ここで構成と仮デザインを確認します。</p>
+        </div>
+
+        <section class="panel-section" aria-labelledby="edit-heading">
+          <h2 id="edit-heading">ページ内容</h2>
+          <label>
+            サイト名
+            <input id="siteNameInput" type="text" value="Sample Studio" />
+          </label>
+          <label>
+            メイン見出し
+            <textarea id="headlineInput" rows="3">事業や作品の価値が伝わるWebサイトを作る</textarea>
+          </label>
+          <label>
+            説明文
+            <textarea id="leadInput" rows="4">目的、掲載内容、デザイン方針を整理し、公開できるページへ段階的に育てます。</textarea>
+          </label>
+        </section>
+
+        <section class="panel-section" aria-labelledby="theme-heading">
+          <h2 id="theme-heading">テーマ</h2>
+          <div class="swatch-row" role="group" aria-label="テーマカラー">
+            <button class="swatch is-active" data-theme="teal" style="--swatch: #0f766e" aria-label="ティール"></button>
+            <button class="swatch" data-theme="blue" style="--swatch: #2563eb" aria-label="ブルー"></button>
+            <button class="swatch" data-theme="rose" style="--swatch: #be123c" aria-label="ローズ"></button>
+          </div>
+        </section>
+
+        <section class="panel-section" aria-labelledby="view-heading">
+          <h2 id="view-heading">確認幅</h2>
+          <div class="segmented" role="group" aria-label="プレビュー幅">
+            <button class="is-active" data-width="desktop">Desktop</button>
+            <button data-width="tablet">Tablet</button>
+            <button data-width="mobile">Mobile</button>
+          </div>
+        </section>
+      </aside>
+
+      <main class="preview-stage" aria-label="Webサイトプレビュー">
+        <div class="preview-toolbar">
+          <div>
+            <span class="status-dot"></span>
+            <span>Live Preview</span>
+          </div>
+          <code>index.html</code>
+        </div>
+
+        <article id="previewFrame" class="preview-frame">
+          <header class="site-header">
+            <a id="brandText" class="brand" href="#">Sample Studio</a>
+            <nav class="nav" aria-label="サイト内ナビゲーション">
+              <a href="#concept">Concept</a>
+              <a href="#work">Work</a>
+              <a href="#contact">Contact</a>
+            </nav>
+          </header>
+
+          <section class="hero">
+            <div class="hero-copy">
+              <p class="eyebrow">Website planning</p>
+              <h2 id="headlineText">事業や作品の価値が伝わるWebサイトを作る</h2>
+              <p id="leadText">
+                目的、掲載内容、デザイン方針を整理し、公開できるページへ段階的に育てます。
+              </p>
+              <div class="hero-actions">
+                <a class="button primary" href="#contact">相談する</a>
+                <a class="button secondary" href="#work">構成を見る</a>
+              </div>
+            </div>
+            <div class="visual-board" aria-label="制作状況">
+              <div class="browser-card">
+                <div class="browser-bar">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="mock-line strong"></div>
+                <div class="mock-line"></div>
+                <div class="mock-grid">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="concept" class="content-section">
+            <p class="section-label">Concept</p>
+            <h3>まずは編集しやすい土台を作る</h3>
+            <p>
+              文言、色、プレビュー幅を変更しながら、サイトの方向性を確認できます。確定した内容はHTML/CSSへ反映していきます。
+            </p>
+          </section>
+
+          <section id="work" class="content-section muted">
+            <div class="card-grid">
+              <article class="info-card">
+                <span>01</span>
+                <h3>目的整理</h3>
+                <p>誰に何を届けるサイトかを短い言葉で決めます。</p>
+              </article>
+              <article class="info-card">
+                <span>02</span>
+                <h3>構成作成</h3>
+                <p>必要なページ、セクション、導線を具体化します。</p>
+              </article>
+              <article class="info-card">
+                <span>03</span>
+                <h3>実装確認</h3>
+                <p>スマホとPCの表示を確認しながら仕上げます。</p>
+              </article>
+            </div>
+          </section>
+
+          <section id="contact" class="content-section contact-band">
+            <div>
+              <p class="section-label">Next</p>
+              <h3>次に、作りたいサイトの内容を決めます</h3>
+            </div>
+            <a class="button primary" href="mailto:example@example.com">仮の連絡先</a>
+          </section>
+        </article>
+      </main>
+
+      <aside class="inspector" aria-label="制作メモ">
+        <section class="panel-section">
+          <h2>開発ファイル</h2>
+          <ul class="file-list">
+            <li><strong>index.html</strong><span>ページ構造</span></li>
+            <li><strong>styles.css</strong><span>見た目</span></li>
+            <li><strong>script.js</strong><span>編集UI</span></li>
+            <li><strong>README.md</strong><span>作業手順</span></li>
+          </ul>
+        </section>
+
+        <section class="panel-section">
+          <h2>制作チェック</h2>
+          <label class="check-row">
+            <input type="checkbox" checked />
+            作業フォルダを作成
+          </label>
+          <label class="check-row">
+            <input type="checkbox" checked />
+            開発者用編集画面を作成
+          </label>
+          <label class="check-row">
+            <input type="checkbox" />
+            サイト目的を決定
+          </label>
+          <label class="check-row">
+            <input type="checkbox" />
+            本番コンテンツを反映
+          </label>
+        </section>
+
+        <section class="panel-section note">
+          <h2>次に必要な情報</h2>
+          <p>業種、サイト名、掲載したい文章や画像、問い合わせ方法を決めると本制作に進めます。</p>
+        </section>
+      </aside>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
