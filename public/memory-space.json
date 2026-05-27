@@ -1,33 +1,105 @@
-{
+﻿{
   "nodes": [
     {
-      "id": "node_start",
+      "id": "node_return",
       "kind": "circle",
-      "title": "start.txt",
-      "x": -240,
-      "y": -80,
+      "title": "last-train.txt",
+      "x": 420,
+      "y": 120,
       "file": {
-        "id": "file_start",
-        "filename": "start.txt",
-        "content": "This is the first memory fragment.",
+        "id": "file_return",
+        "filename": "last-train.txt",
+        "content": "終電の窓に、知らない街灯が何度も流れていった。",
         "assets": []
       }
     },
     {
-      "id": "node_archive",
+      "id": "node_2am",
       "kind": "square",
-      "title": "archive",
-      "x": 120,
-      "y": 90,
-      "directoryName": "archive",
+      "title": "Start",
+      "x": -12.43966775374494,
+      "y": 320.9338962396311,
+      "directoryName": "Start",
       "files": [
         {
-          "id": "file_archive_note",
-          "filename": "note.txt",
-          "content": "Place public assets under /public/assets and reference them with /assets/...",
+          "id": "file_mpmhx9mc_uybl8u",
+          "filename": "Start",
+          "content": "今日から君も,僕たちの仲間だ！\nまずは、アルバムの軌跡をたどってみよう。\n\n右(東)へ向かって",
+          "assets": [
+            {
+              "id": "asset_mpncmkdz_vtxh72",
+              "kind": "image",
+              "label": "image",
+              "src": "/assets/images/CIMG2187.JPG"
+            }
+          ]
+        },
+        {
+          "id": "file_mpmilt9v_p9wtqb",
+          "filename": "36.8682453/2029.05.15/138.9404950_時間旅行?",
+          "content": "今日は普通にツイッターとかしてたはずだったんだけど、\n寝落ちしてたのかな？\n目が覚めたらすごく変な景色のなかにいて、頭がぐわんぐわんする。\n\nなんとかいう曲のデモのリンク（流出っぽいやつ）を間違えて踏んじゃったとこまでは覚えてて、\nそもそもいつの間に寝てたんだろう？\n\n最初は自分の部屋の中にいたんだけど、勝手に壁が近づいて、すり抜けて、家の目の前の国道まで出て来てしまった。\n\n急に誰ともしゃべれなくなったので、せめて、私の思ったことを記録に残そうと思う。\n×××の△△△で、誰でも見られるように。書く手間もないし。\n\n遠くに人影が見えた。歩いたらどうなるのかわからないけど、歩いて近づいてみようと思う。",
           "assets": []
         }
       ]
+    },
+    {
+      "id": "node_rain",
+      "kind": "circle",
+      "title": "start",
+      "x": -420,
+      "y": 190,
+      "file": {
+        "id": "file_rain",
+        "filename": "start",
+        "content": "あの日だけ、雨音が曲より大きかった。",
+        "assets": []
+      }
+    },
+    {
+      "id": "node_mpmb434w_vwx1ga",
+      "kind": "circle",
+      "title": "rog",
+      "x": -367.5176846259782,
+      "y": 37.58017409659543,
+      "file": {
+        "id": "file_mpmb434w_7orjtn",
+        "filename": "rog",
+        "content": "ミックスもされていない、誰かが落とした音源",
+        "assets": [
+          {
+            "id": "asset_mpnejm52_qjlrcs",
+            "kind": "image",
+            "label": "image",
+            "src": "/assets/images/CIMG2225.JPG"
+          },
+          {
+            "id": "asset_mpnejmoa_j7kdhs",
+            "kind": "audio",
+            "label": "audio",
+            "src": "/assets/audio/02.morensoji_hightime_仮.wav"
+          }
+        ]
+      }
+    },
+    {
+      "id": "node_mpmiyijy_oybujj",
+      "kind": "circle",
+      "title": "untitled.txt",
+      "x": -28.210558271704272,
+      "y": 67.75323199611704,
+      "file": {
+        "id": "file_mpmiyijy_ut0xbf",
+        "filename": "untitled.txt",
+        "content": "こんにちは",
+        "assets": [
+          {
+            "id": "asset_mpn3x7ro_pw5vgm",
+            "kind": "image",
+            "label": "image",
+            "src": "/assets/images/CIMG2187.JPG"
+          }
+        ]
+      }
     }
   ],
   "routes": [
@@ -36,9 +108,25 @@
       "name": "route_01",
       "edges": [
         {
-          "id": "edge_start_archive",
-          "source": "node_start",
-          "target": "node_archive"
+          "id": "edge_mpmgwz7b_4sdpci",
+          "source": "node_mpmb434w_vwx1ga",
+          "target": "node_rain"
+        },
+        {
+          "id": "edge_mpmgx6s6_9uvz9z",
+          "source": "node_rain",
+          "target": "node_2am"
+        }
+      ]
+    },
+    {
+      "id": "route_unknown",
+      "name": "???",
+      "edges": [
+        {
+          "id": "edge_rain_2am",
+          "source": "node_rain",
+          "target": "node_2am"
         }
       ]
     }
